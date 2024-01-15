@@ -16,12 +16,20 @@ def main():
 
     print(data)
     
-    values = [f['snai'] for f in fields]
-    weights = [[[f['weight'] for f in fields]]]
+    values = [f['value_snai'] for f in data]
+    print("")
+    print(values)
+    print(type(values))
+    
+    weights = [[f['weight'] for f in data],]
+    print("")
+    print(weights)
+    print(type(weights))
     
     capacities = [100] #baudi
 
     solver.init(values, weights, capacities)
+    print(solver)
     computed_value = solver.solve()
 
     packed_items = []
@@ -30,7 +38,7 @@ def main():
     print("Total value =", computed_value)
     for i in range(len(values)):
         if solver.best_solution_contains(i):
-            packed_items.append(i)
+            packed_items.append(data[i]["name"])
             packed_weights.append(weights[0][i])
             total_weight += weights[0][i]
     print("Total weight:", total_weight)
