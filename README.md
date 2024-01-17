@@ -1,2 +1,2 @@
 # fantasanremo
-Select the best team for fantasanremo
+Use knapsack problem mip formulation, to identify the best team of fantasanremo.
