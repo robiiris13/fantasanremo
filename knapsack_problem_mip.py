@@ -69,7 +69,7 @@ def main():
   solution = [data[vi] for vi in values_idxs if int(var_take[vi].SolutionValue()) == 1]
   print(solution)
   df_output = pd.DataFrame.from_records([sol.__dict__ for sol in solution])
-  df_output.to_excel('./data/output/performers.xlsx', index=False)
+  df_output.to_excel('./data/output/performers_best_team.xlsx', index=False)
   
   print()
   print('Solver time:', solver.WallTime(), 'ms')
